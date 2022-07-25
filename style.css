@@ -2,6 +2,14 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: #181a1b;
+    color: #e8e6e3;
 }
 header {
     width: 100%;
@@ -17,6 +25,12 @@ header {
 header nav ul li {
     display: inline;
     padding-left: 10px;
+}
+nav a, nav a:visited {
+    color: deepskyblue;
+}
+nav a:hover {
+    color:indianred;
 }
 footer {
     width: 100%;
