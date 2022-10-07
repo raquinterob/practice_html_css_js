@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <style>
+        * { /* Buenas prácticas para resetear valores */
+          box-sizing: border-box;
+          padding: 0;
+          margin: 0;
+        }
+        html {
+          font-size: 62.5%; /* Buenas prácticas para usar rem */
+          
+          background-color: #333;
+          color: white;
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+            sans-serif;  
+        }
+        body {
+          text-align: center;
+          font-size: 1.6rem;
+        }
+        .container {
+            background-color: lightsteelblue;
+            height: 150px;
+            margin-bottom:10px;
+            display: flex;
+        }
+        .item {
+            background-color: mediumpurple;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+        .container .item:nth-child(2n + 2) {
+            background-color: midnightblue;
+        }
+        /*.row {
+            flex-direction: row; 
+        } */
+        .column {
+            flex-direction: column;
+        }
+        .justifyContent {
+            justify-content: center;
+        }
+        .alignItem {
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container row justifyContent">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    <div class="container row justifyContent alignItem">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    <div class="container column justifyContent">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    <div class="container column justifyContent alignItem">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+</body>
+</html>
