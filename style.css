@@ -82,9 +82,9 @@ article figure img {
 }
 article figure figcaption {
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: #aaa;
-    margin-top: 0.8rem;
+    margin-top: 1rem;
 }
 article ul {
     margin-left: 2rem;
