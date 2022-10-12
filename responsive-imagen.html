@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Images</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      html {
+        font-size: 62.5%;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+          sans-serif;
+      }
+      header {
+        height: 10rem;
+        background-color: #181a1b;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      header h1 {
+        color: darkcyan;
+      }
+      img {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header><h1>Responsive Design - Responsive Images</h1></header>
+    <main>
+      <picture>
+        <source media="(min-width: 1024px)" srcset="//resources.rqdigital.co/img/img-large.jpg">
+        <source media="(min-width: 768px)" srcset="//resources.rqdigital.co/img/img-medium.jpg">
+        <img src="//resources.rqdigital.co/img/img-small.jpg" alt="Imagen de paisaje - Ejemplo" />
+      </picture>
+    </main>
+  </body>
+</html>
