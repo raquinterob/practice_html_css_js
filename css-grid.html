@@ -1,79 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSS Grid</title>
     <style>
-        * { /* Buenas prácticas para resetear valores */
-          box-sizing: border-box;
-          padding: 0;
-          margin: 0;
-        }
-        html {
-          font-size: 62.5%; /* Buenas prácticas para usar rem */
-          
-          background-color: #333;
-          color: white;
-          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
-            sans-serif;  
-        }
-        body {
-          text-align: center;
-          font-size: 1.6rem;
-        }
-        .container {
-            background-color:lemonchiffon;
-            width: 250px;
-            height: 250px;
-            margin:20px;
-            padding: 20px;
-            border: 1px solid lightcoral;
-            box-sizing: border-box;
+      * {
+        /* Buenas prácticas para resetear valores */
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      html {
+        font-size: 62.5%; /* Buenas prácticas para usar rem */
 
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr 1fr;
-        }
-        .item {
-            background-color:lightcoral;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-        }
-        .container .item:nth-child(2n + 2) {
-            background-color:mediumturquoise;
-        }
-        .container .item:nth-child(1) {
-            grid-column: 1 / 2 ;
-        }
-        .container .item:nth-child(2) {
-            grid-column: 2 / 3 ;
-            grid-row: 2 / 3 ;
-        }
-        .container .item:nth-child(3) {
-            grid-column: 3 / 4 ;
-            grid-row: 3 / 4 ;
-        }
-        .container .item:nth-child(4) {
-            grid-column: 4 / 5 ;
-            grid-row: 4 / 5 ;
-        }
+        background-color: #333;
+        color: white;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+          sans-serif;
+      }
+      body {
+        text-align: left;
+        font-size: 1.6rem;
+        padding: 0 24px;
+      }
+      h3 {
+        margin-top: 40px;
+      }
+      .containerA {
+        background-color: lemonchiffon;
+        width: 250px;
+        height: 250px;
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid lightcoral;
+        box-sizing: border-box;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+      }
+      .itemA {
+        background-color: lightcoral;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: grid;
+        place-content: center;
+      }
+      .containerA .itemA:nth-child(2n + 2) {
+        background-color: mediumturquoise;
+      }
+      .containerA .itemA:nth-child(1) {
+        grid-column: 1 / 2;
+      }
+      .containerA .itemA:nth-child(2) {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+      }
+      .containerA .itemA:nth-child(3) {
+        grid-column: 3 / 4;
+        grid-row: 3 / 4;
+      }
+      .containerA .itemA:nth-child(4) {
+        grid-column: 4 / 5;
+        grid-row: 4 / 5;
+      }
+
+      .itemGeneral {
+        display: grid;
+        place-content: center;
+        background-color: darkslateblue;
+        border: 2px solid blueviolet;
+        font-size: 2rem;
+      }
+      .containerGeneral {
+        border: 5px solid rgb(42, 162, 206);
+        background-color: #868686;
+        margin: 20px;
+        padding: 10px;
+        max-width: 400px;
+      }
+
+      /* 
+      Propiedades de Contenedor
+      */
+      .divB {
+        display: grid;
+        grid-template-columns: 80px 40px 160px;
+        grid-auto-rows: 80px;
+        column-gap: 25px;
+        row-gap: 5px;
+      }
+      /* 
+      grid-auto-flow: indica la direccion de organizacion de los items
+      */
+      .divC {
+        display: grid;
+        grid-template-rows: 40px 80px;
+        grid-auto-columns: 80px;
+        grid-auto-flow: column;
+        gap: 12px;
+      }
+
+      /* 
+      Propiedades de Alineacion
+      */
+      .divD {
+        display: grid;
+        grid-auto-rows: 60px;
+        grid-template-columns: 60px 60px 60px;
+        gap: 15px;
+        height: 300px;
+
+        justify-content: center;
+        align-content: center;
+
+        justify-items: end;
+        align-items: flex-start;
+      }
+      .divD .itemGeneral:nth-child(1) {
+        justify-self: stretch;
+        align-self: stretch;
+      }
+      .divD .itemGeneral:nth-child(2) {
+        justify-self: start;
+        align-self: end;
+      }
+
+      /* 
+      Propiedades de Ubicacion
+      Donde empieza y donde termina un objeto dentro de la grilla.
+      grid-column es la combinacion de grid-column-start y grid-column-end
+      */
+      .divE {
+        display: grid;
+        place-content: center;
+        grid-template-columns: 80px 80px 80px;
+        grid-template-rows: 40px 40px 40px;
+        gap: 5px;
+      }
+      .divE .itemGeneral:nth-child(1) {
+        grid-column: 1/4;
+      }
+      .divE .itemGeneral:nth-child(2) {
+        grid-area: 2/1/4/3;
+      }
+      .divE .itemGeneral:nth-child(3) {
+        grid-column: 3/4;
+        grid-row: 2/4;
+      }
+
+      /* Ubicacion por grid-area con etiquetado de secciones */
+      .divF {
+        display: grid;
+        place-content: center;
+        grid-template-columns: 80px 80px 80px;
+        grid-template-rows: 40px 40px 40px;
+        gap: 5px;
+
+        grid-template-areas:
+          'header header header'
+          'main main side'
+          'main main side';
+      }
+      .divF .itemGeneral:nth-child(1) {
+        grid-area: header;
+      }
+      .divF .itemGeneral:nth-child(2) {
+        grid-area: main;
+      }
+      .divF .itemGeneral:nth-child(3) {
+        grid-area: side;
+      }
+
+      /* Funciones especiales : minmax y repeat */
+      .divG {
+        display: grid;
+        grid-template-columns: minmax(20px, 100px) 50px minmax(40px, 220px);
+        grid-template-rows: repeat(3, auto);
+        gap: 5px;
+        max-width: 600px;
+      }
     </style>
-</head>
-<body>
-    <div class="container">
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
+  </head>
+  <body>
+    <div class="containerA">
+      <div class="itemA">1</div>
+      <div class="itemA">2</div>
+      <div class="itemA">3</div>
+      <div class="itemA">4</div>
     </div>
-    <div class="container">
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
+    <h3>Propiedades de Contenedor</h3>
+    <p> Construccion de layout General </p>
+    <div class="containerGeneral divB">
+      <div class="itemGeneral">1</div>
+      <div class="itemGeneral">2</div>
+      <div class="itemGeneral">3</div>
+      <div class="itemGeneral">4</div>
+      <div class="itemGeneral">5</div>
+      <div class="itemGeneral">6</div>
     </div>
-</body>
+    <p> grid-auto-flow: indica la direccion de organizacion de los items </p>
+    <div class="containerGeneral divC">
+      <div class="itemGeneral">1</div>
+      <div class="itemGeneral">2</div>
+      <div class="itemGeneral">3</div>
+      <div class="itemGeneral">4</div>
+      <div class="itemGeneral">5</div>
+      <div class="itemGeneral">6</div>
+    </div>
+    <h3>Propiedades de Alineacion</h3>
+    <div class="containerGeneral divD">
+      <div class="itemGeneral">1</div>
+      <div class="itemGeneral">2</div>
+      <div class="itemGeneral">3</div>
+      <div class="itemGeneral">4</div>
+      <div class="itemGeneral">5</div>
+      <div class="itemGeneral">6</div>
+    </div>
+    <h3>Propiedades de Ubicacion</h3>
+    <p>
+      Donde empieza y donde termina un objeto dentro de la grilla.<br />grid-column
+      es la combinacion de grid-column-start y grid-column-end
+    </p>
+    <div class="containerGeneral divE">
+      <div class="itemGeneral">Header</div>
+      <div class="itemGeneral">Main</div>
+      <div class="itemGeneral">Aside</div>
+    </div>
+    <p> Ubicacion por grid-area con etiquetado de secciones</p>
+    <div class="containerGeneral divF">
+      <div class="itemGeneral">Header</div>
+      <div class="itemGeneral">Main</div>
+      <div class="itemGeneral">Aside</div>
+    </div>
+    <h3>Funciones especiales : minmax y repeat</h3>
+    <div class="containerGeneral divG">
+      <div class="itemGeneral">1 Hola</div>
+      <div class="itemGeneral">2</div>
+      <div class="itemGeneral">3 Hola Programadores</div>
+      <div class="itemGeneral">4</div>
+      <div class="itemGeneral">5</div>
+      <div class="itemGeneral">6</div>
+      <div class="itemGeneral">7</div>
+      <div class="itemGeneral">8</div>
+      <div class="itemGeneral">9</div>
+    </div>
+    <h3>Keywords especiales : fr min-content max-content auto-fill/auto-fit</h3>
+    <div class="containerGeneral divG">
+      <div class="itemGeneral">1 Hola</div>
+      <div class="itemGeneral">2</div>
+      <div class="itemGeneral">3 Hola Programadores</div>
+      <div class="itemGeneral">4</div>
+    </div>
+  </body>
 </html>
