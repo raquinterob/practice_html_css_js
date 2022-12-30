@@ -183,6 +183,25 @@
         gap: 5px;
         max-width: 600px;
       }
+      /* Keywords especiales : fr min-content max-content auto-fill/auto-fit */
+      .divH {
+        display: grid;
+        grid-template-columns: 1fr 2fr min-content max-content;
+        gap: 5px;
+        max-width: 700px;
+      }
+      /* Keywords especiales : auto-fill/*/
+      .divI {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+        gap: 5px;
+      }
+      /* Keywords especiales : auto-fit */
+      .divJ {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+        gap: 5px;
+      }
     </style>
   </head>
   <body>
@@ -248,11 +267,25 @@
       <div class="itemGeneral">8</div>
       <div class="itemGeneral">9</div>
     </div>
-    <h3>Keywords especiales : fr min-content max-content auto-fill/auto-fit</h3>
-    <div class="containerGeneral divG">
-      <div class="itemGeneral">1 Hola</div>
+    <h3>Keywords especiales : fr min-content max-content</h3>
+    <div class="containerGeneral divH">
+      <div class="itemGeneral">1</div>
       <div class="itemGeneral">2</div>
-      <div class="itemGeneral">3 Hola Programadores</div>
+      <div class="itemGeneral">3 Hola 3333 33 3333 3333  33 3 33333 33 3 3 3333 3 3333 </div>
+      <div class="itemGeneral">4 444 44 4 444 44 44 44 444444 444 4 444 444 44 4 44</div>
+    </div>
+    <h3>Keywords especiales : auto-fill</h3>
+    <div class="containerGeneral divI">
+      <div class="itemGeneral">1</div>
+      <div class="itemGeneral">2</div>
+      <div class="itemGeneral">3</div>
+      <div class="itemGeneral">4</div>
+    </div>
+    <h3>Keywords especiales : auto-fit</h3>
+    <div class="containerGeneral divJ">
+      <div class="itemGeneral">1</div>
+      <div class="itemGeneral">2</div>
+      <div class="itemGeneral">3</div>
       <div class="itemGeneral">4</div>
     </div>
   </body>
